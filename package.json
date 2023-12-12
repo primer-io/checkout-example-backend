@@ -1,0 +1,15 @@
+{
+  "name": "checkout-example-backend",
+  "version": "1.0.0",
+  "main": "src/main.ts",
+  "repository": "git@github.com:primer-io/example-backend.git",
+  "author": "Jack Newcombe <jack.newcombe@primer.io>",
+  "license": "MIT",
+  "scripts": {
+    "lint:prettier": "prettier . --ignore-path .gitignore --check",
+    "format:prettier": "prettier . --ignore-path .gitignore --write"
+  },
+  "devDependencies": {
+    "prettier": "^3.1.1"
+  }
+}

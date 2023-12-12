@@ -6,7 +6,7 @@ export async function post<T>(
   const response = await fetch(url, {
     ...(body && { body: JSON.stringify(body) }),
     ...(headers && { headers }),
-    method: 'POST',
+    method: "POST",
   });
 
   const json = (await response.json()) as T & { error?: ServerError };
