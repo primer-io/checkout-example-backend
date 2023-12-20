@@ -12,7 +12,7 @@ _It uses [Deno](https://deno.land) as the runtime and [Hono](https://hono.dev) a
 
 # 🚀 Get started
 
-## Pre-requisites ✅
+## Pre-requisites
 
 - A Primer sandbox account 🚀
 
@@ -22,7 +22,7 @@ _It uses [Deno](https://deno.land) as the runtime and [Hono](https://hono.dev) a
 
 _We recommend using Glitch to quickly spin up a new instance of your server for free._
 
-1. First, click on the following button to open up the project in Glitch
+1. First, click on the following button to open the project in Glitch and start the server.
 
    [![remix With Glitch](https://cdn.glitch.com/2703baf2-b643-4da7-ab91-7ee2a2d00b5b%2Fremix-button-v2.svg?v=1622676640618)](https://glitch.com/edit/#!/import/github/primer-io/example-web-checkout)
 
@@ -32,10 +32,10 @@ _We recommend using Glitch to quickly spin up a new instance of your server for 
 
 4. Paste this URL in the example project.
 
-## Run it locally 👩‍💻
+## Run it locally
 
-1. First, make sure [Deno](https://deno.land) is installed on your machine
-2. Clone this repository
+1. First, make sure [Deno](https://deno.land) is installed on your machine.
+2. Clone this repository:
 
    ```sh
    git clone https://github.com/primer-io/example-backend.git
