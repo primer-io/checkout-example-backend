@@ -8,19 +8,17 @@ This project is a very simple companion backend to the example apps of [Primer](
 - [example iOS apps](https://github.com/primer-io/checkout-examples-ios)
 - [example Android apps](https://github.com/primer-io/checkout-examples-android)
 
----
-
 _It uses [Deno](https://deno.land) as the runtime and [Hono](https://hono.dev) as the HTTP server framework._
 
 # 🚀 Get started
 
-## ✅ Pre-requisites
+## Pre-requisites ✅
 
 - A Primer sandbox account 🚀
 
 - An API key for your Sandbox. <br /> You can grab your API key or create a new one from the [Primer Dashboard](https://sandbox-dashboard.primer.io/developers/apiKeys).
 
-## ⚡️ Deploy on Glitch
+## Deploy on Glitch ⚡️
 
 _We recommend using Glitch to quickly spin up a new instance of your server for free._
 
@@ -34,7 +32,7 @@ _We recommend using Glitch to quickly spin up a new instance of your server for 
 
 4. Paste this URL in the example project.
 
-## 👩‍💻 Run it locally
+## Run it locally 👩‍💻
 
 1. First, make sure [Deno](https://deno.land) is installed on your machine
 2. Clone this repository
