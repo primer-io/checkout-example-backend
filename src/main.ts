@@ -1,9 +1,13 @@
 import { Hono } from "hono/mod.ts";
+import { cors } from "hono/middleware.ts";
+
 import "std/dotenv/load.ts";
 import { post } from "./utils/post.ts";
 import { primerApiUrl, primerHeaders } from "./api/const.ts";
 
 const app = new Hono();
+
+app.use("/*", cors());
 
 app.get("/", (c) =>
   c.text(["Available endpoints:", "", "  POST /client-session"].join("\n"))
