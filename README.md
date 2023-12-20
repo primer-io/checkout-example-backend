@@ -1,24 +1,59 @@
-# Server Deno Hono
+![Primer Banner](./images/primer-banner.png)
 
-In this example we build a server to integrate with Primer's API.
+# 🦄 Primer Example Backend
 
-It uses [Deno](https://deno.land) as the runtime and [Hono](https://hono.dev) as the HTTP server framework, but feel free to build your server however you'd like.
+This project is a very simple companion backend to the example apps of [Primer](https://primer.io) Universal Checkout:
 
-## Running on your browser
+- [example Web apps](#)
+- [example iOS apps](https://github.com/primer-io/checkout-examples-ios)
+- [example Android apps](https://github.com/primer-io/checkout-examples-android)
 
-[Click here to immediately launch it on your browser](https://stackblitz.com/github/primer-io/checkout-web/tree/main/examples/server-deno-hono).
+---
 
-Once it's open, make sure to:
+_It uses [Deno](https://deno.land) as the runtime and [Hono](https://hono.dev) as the HTTP server framework._
 
-1. Create a new file `.env` and copy contents from `.env.example` into it
-2. Get an `API_KEY` from your Primer Dashboard and paste it there
-   - Example: `API_KEY=1234-foo-bar-4321`
+# 🚀 Get started
 
-## Running locally
+## ✅ Pre-requisites
 
-1. Install [Deno](https://deno.land)
-2. Follow the same instructions described on the section above about the `API_KEY`
-3. Execute the following script on a terminal window:
+- A Primer sandbox account 🚀
+
+- An API key for your Sandbox. <br /> You can grab your API key or create a new one from the [Primer Dashboard](https://sandbox-dashboard.primer.io/developers/apiKeys).
+
+## ⚡️ Deploy on Glitch
+
+_We recommend using Glitch to quickly spin up a new instance of your server for free._
+
+1. First, click on the following button to open up the project in Glitch
+
+   [![remix With Glitch](https://cdn.glitch.com/2703baf2-b643-4da7-ab91-7ee2a2d00b5b%2Fremix-button-v2.svg?v=1622676640618)](https://glitch.com/edit/#!/import/github/primer-io/example-web-checkout)
+
+2. On Glitch, open the file `.env` and set the environment variable `PRIMER_API_KEY` to your Primer sandbox API key.
+
+3. On Glitch, grab the link of your Glitch instance. It should look like `https://xxx-yyy-zzz.glitch.me`.
+
+4. Paste this URL in the example project.
+
+## 👩‍💻 Run it locally
+
+1. First, make sure [Deno](https://deno.land) is installed on your machine
+2. Clone this repository
+
+   ```sh
+   git clone https://github.com/primer-io/example-backend.git
+
+   cd ./example-backend
+   ```
+
+3. Clone the file `.env.example` and call it `.env`. Set the environment variable `PRIMER_API_KEY` to your Primer sandbox API key.
+
+4. Execute the following script on a terminal window:
    ```sh
    deno task start
    ```
+
+# 🤖 Capabilities
+
+- `GET /` <br /> Health check
+
+- `POST /client-session` <br /> Create a client session
