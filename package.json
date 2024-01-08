@@ -1,15 +1,31 @@
 {
-  "name": "checkout-example-backend",
+  "name": "@primer-io/example-backend",
+  "type": "module",
   "version": "1.0.0",
-  "main": "src/main.ts",
-  "repository": "git@github.com:primer-io/example-backend.git",
-  "author": "Jack Newcombe <jack.newcombe@primer.io>",
+  "private": true,
+  "author": "@primer-io",
   "license": "MIT",
   "scripts": {
-    "lint:prettier": "prettier . --ignore-path .gitignore --check",
-    "format:prettier": "prettier . --ignore-path .gitignore --write"
+    "start": "concurrently npm:start:*",
+    "start:build": "npm run build -- --watch",
+    "start:server": "nodemon dist/server.js",
+    "prestart": "npm run build",
+    "build": "esbuild src/server.ts --bundle --format=esm --outfile=dist/server.js --packages=external --platform=node --target=esnext"
+  },
+  "engines": {
+    "node": "16.x"
+  },
+  "dependencies": {
+    "@fastify/cors": "^8.5.0",
+    "dotenv": "^16.3.1",
+    "fastify": "^4.24.3",
+    "node-fetch": "^3.3.2"
   },
   "devDependencies": {
-    "prettier": "^3.1.1"
+    "@types/node": "^20.10.5",
+    "concurrently": "^8.2.2",
+    "esbuild": "^0.19.5",
+    "nodemon": "^3.0.2",
+    "typescript": "^5.2.2"
   }
 }
