@@ -1,0 +1,35 @@
+name: lint
+
+on:
+  pull_request:
+    types:
+      - opened
+      - edited
+      - synchronize
+    branches:
+      - main
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: actions/setup-node@v4
+        with:
+            node-version: '.nvmrc'
+
+      - run: npm i --frozen-lockfile
+
+      - run: npm run lint:es
+
+      - run: npm run lint:prettier
+
+      - run: npm run lint:ts
+
+        # needed for `commitlint`
+    #   - run: git fetch origin main
+    #   - name: PR title | commitlint
+    #     run: echo '${{ github.event.pull_request.title }}' | bunx commitlint
