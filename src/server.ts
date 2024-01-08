@@ -1,16 +1,18 @@
-import { Hono } from "hono/mod.ts";
-import { cors } from "hono/middleware.ts";
+import "dotenv/config";
+import fastify from "fastify";
+import cors from "@fastify/cors";
+import { randomUUID } from "node:crypto";
 
-import "std/dotenv/load.ts";
 import { post } from "./utils/post.ts";
 import { primerApiUrl, primerHeaders } from "./api/const.ts";
 
-const app = new Hono();
+const app = fastify();
+await app.register(cors, {
+  origin: true,
+});
 
-app.use("/*", cors());
-
-app.get("/", (c) =>
-  c.text(["Available endpoints:", "", "  POST /client-session"].join("\n"))
+app.get("/", () =>
+  ["Available endpoints:", "", "  POST /client-session"].join("\n")
 );
 
 ///////////////////////////////////////////
@@ -21,9 +23,10 @@ app.post("/client-session", async (c) => {
   const res = await post<ClientSession>(
     `${primerApiUrl}/client-session`,
 
-    /* ✨ Feel free to update this 👇 */
+    // ✨ Feel free to update this 👇
+    // Check the API reference here: https://apiref.primer.io/reference/create_client_side_token_client_session_post
     {
-      orderId: crypto.randomUUID(),
+      orderId: randomUUID(),
 
       order: {
         // Line items for this session
@@ -33,7 +36,8 @@ app.post("/client-session", async (c) => {
           {
             itemId: "shoes-123",
             description: "Some nice shoes!",
-            amount: 2500, // Amount should be in minor units!
+            // Amount should be in minor units!
+            amount: 2500,
             quantity: 1,
           },
         ],
@@ -58,12 +62,11 @@ app.post("/client-session", async (c) => {
         },
       },
     },
-    /* */
 
     primerHeaders
   );
 
-  return c.json(res);
+  return res;
 });
 
 type ClientSession = {
@@ -74,4 +77,13 @@ type ClientSession = {
 // Serve
 ///////////////////////////////////////////
 
-await Deno.serve(app.fetch);
+const port = 3000;
+
+try {
+  await app.listen({ port });
+} catch (err) {
+  app.log.error(err);
+  process.exit(1);
+}
+
+console.log("🚀 Server running on", `http://localhost:${port}`);
