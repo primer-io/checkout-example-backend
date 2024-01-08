@@ -1,4 +1,4 @@
-![Primer Banner](https://github.com/xevious78/example-backend/raw/main/images/primer-banner.png)
+![Primer Banner](https://github.com/primer-io/example-backend/raw/main/images/primer-banner.png)
 
 # 💳 Primer Example Backend
 
@@ -25,7 +25,7 @@ _We recommend using Glitch to quickly spin up a new instance of your server for 
 
 1. First, click on this button to open the project in Glitch and start the server. <br /> _It may take a moment to start._
 
-   [![Remix With Glitch](https://cdn.glitch.com/2703baf2-b643-4da7-ab91-7ee2a2d00b5b%2Fremix-button-v2.svg?v=1622676640618)](https://glitch.com/edit/#!/import/github/xevious78/example-backend)
+   [![Remix With Glitch](https://cdn.glitch.com/2703baf2-b643-4da7-ab91-7ee2a2d00b5b%2Fremix-button-v2.svg?v=1622676640618)](https://glitch.com/edit/#!/import/github/primer-io/example-backend)
 
 2. On Glitch, open the file `.env`. <br /> Set the environment variable `PRIMER_API_KEY` to your Primer sandbox API key.
 
