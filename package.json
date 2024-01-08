@@ -10,7 +10,15 @@
     "start:build": "npm run build -- --watch",
     "start:server": "nodemon dist/server.js",
     "prestart": "npm run build",
-    "build": "esbuild src/server.ts --bundle --format=esm --outfile=dist/server.js --packages=external --platform=node --target=esnext"
+    "build": "esbuild src/server.ts --bundle --format=esm --outfile=dist/server.js --packages=external --platform=node --target=esnext",
+    "lint": "concurrently npm:lint:*",
+    "lint:commit": "commitlint --from origin/main --to HEAD --verbose",
+    "lint:es": "eslint . --ignore-path .gitignore --report-unused-disable-directives --max-warnings 0",
+    "lint:prettier": "prettier . --ignore-path .gitignore --check",
+    "lint:ts": "echo 'Ignored for now...'",
+    "format": "concurrently npm:format:*",
+    "format:es": "npm run lint:es --fix",
+    "format:prettier": "prettier . --ignore-path .gitignore --write"
   },
   "engines": {
     "node": "16.x"
@@ -23,9 +31,14 @@
   },
   "devDependencies": {
     "@types/node": "^20.10.5",
+    "@typescript-eslint/eslint-plugin": "^6.11.0",
+    "@typescript-eslint/parser": "^6.11.0",
     "concurrently": "^8.2.2",
     "esbuild": "^0.19.5",
     "nodemon": "^3.0.2",
-    "typescript": "^5.2.2"
+    "typescript": "^5.2.2",
+    "eslint": "^8.53.0",
+    "prettier": "^3.1.0",
+    "prettier-plugin-organize-imports": "^3.2.4"
   }
 }
