@@ -16,8 +16,6 @@ jobs:
       pull-requests: write
     steps:
       - uses: actions/checkout@v4
-        with: 
-          token: ${{ secrets.GITHUB_TOKEN }}
 
       - uses: actions/setup-node@v4
         with:
@@ -30,8 +28,3 @@ jobs:
       - run: npm run lint:prettier
 
       - run: npm run lint:ts
-
-        # needed for `commitlint`
-    #   - run: git fetch origin main
-    #   - name: PR title | commitlint
-    #     run: echo '${{ github.event.pull_request.title }}' | bunx commitlint
