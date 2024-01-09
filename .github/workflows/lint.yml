@@ -1,0 +1,32 @@
+name: lint
+
+permissions:
+  contents: read
+  pull-requests: write
+
+on:
+  pull_request:
+    types:
+      - opened
+      - edited
+      - synchronize
+    branches:
+      - main
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: '.nvmrc'
+
+      - run: npm i --frozen-lockfile
+
+      - run: npm run lint:es
+
+      - run: npm run lint:prettier
+
+      - run: npm run lint:ts

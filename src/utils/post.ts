@@ -1,14 +1,14 @@
-import fetch from "node-fetch";
+import fetch from 'node-fetch';
 
 export async function post<T>(
   url: string,
   body: Record<string, unknown>,
-  headers?: HeadersInit
+  headers?: HeadersInit,
 ) {
   const response = await fetch(url, {
     ...(body && { body: JSON.stringify(body) }),
     ...(headers && { headers }),
-    method: "POST",
+    method: 'POST',
   });
 
   const json = (await response.json()) as T & { error?: ServerError };
