@@ -1,6 +1,6 @@
 name: lint
 
-permissions: 
+permissions:
   contents: read
   pull-requests: write
 
