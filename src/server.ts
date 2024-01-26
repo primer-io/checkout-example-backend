@@ -19,7 +19,7 @@ app.get('/', () =>
 // Create a client session and send back the client token
 ///////////////////////////////////////////
 
-app.post('/client-session', async (c) => {
+app.post('/client-session', async () => {
   const res = await post<ClientSession>(
     `${primerApiUrl}/client-session`,
 
