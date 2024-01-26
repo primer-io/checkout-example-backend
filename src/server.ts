@@ -61,6 +61,15 @@ app.post('/client-session', async () => {
           state: 'Cambridgeshire',
         },
       },
+
+      paymentMethod: {
+        orderedAllowedCardNetworks: [
+          'VISA',
+          'MASTERCARD',
+          'CARTES_BANCAIRES',
+          'AMEX',
+        ],
+      },
     },
 
     primerHeaders,

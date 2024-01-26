@@ -9,7 +9,9 @@ This project is a very simple companion backend to the example apps of [Primer](
 
 ---
 
-_This server uses [Node](https://nodejs.org/) as the runtime (v16 to be compatible with Glitch) and [Fastify](https://fastify.dev/) as the HTTP server framework._
+_This server uses [Node](https://nodejs.org/) as the runtime and [Fastify](https://fastify.dev/) as the HTTP server framework._
+
+_This project uses Node v16 to be compatible with Glitch but we encourage you to use a more recent version of Node._
 
 # 🚀 Get started
 
@@ -25,7 +27,7 @@ _We recommend using Glitch to quickly spin up a new instance of your server for 
 
 1. First, click on this button to open the project in Glitch and start the server. <br /> _It may take a moment to start._
 
-   [![Remix With Glitch](https://cdn.glitch.com/2703baf2-b643-4da7-ab91-7ee2a2d00b5b%2Fremix-button-v2.svg?v=1622676640618)](https://glitch.com/edit/#!/import/github/primer-io/example-backend)
+   [![Remix With Glitch](https://cdn.glitch.com/2703baf2-b643-4da7-ab91-7ee2a2d00b5b%2Fremix-button-v2.svg?v=1622676640618)](https://glitch.com/edit/#!/import/github/xevious78/example-backend)
 
 2. On Glitch, open the file `.env`. <br /> Set the environment variable `PRIMER_API_KEY` to your Primer sandbox API key.
 
