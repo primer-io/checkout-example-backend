@@ -23,8 +23,9 @@ app.post('/client-session', async () => {
   const res = await post<ClientSession>(
     `${primerApiUrl}/client-session`,
 
-    // ✨ Feel free to update this 👇
-    // Check the API reference here: https://apiref.primer.io/reference/create_client_side_token_client_session_post
+    // Check the API reference here 👉 https://apiref.primer.io/reference/create_client_side_token_client_session_post
+
+    // ✨ Try updating this to modify your client session 👇
     {
       orderId: randomUUID(),
 
