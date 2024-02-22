@@ -18,7 +18,7 @@
     "lint:ts": "echo 'Ignored for now...'",
     "format": "concurrently npm:format:*",
     "format:es": "npm run lint:es --fix",
-    "format:prettier": "prettier . --ignore-path .gitignore --ignore-path .github/CONTRIBUTING.md --write"
+    "format:prettier": "prettier . --write"
   },
   "engines": {
     "node": "16.x"
